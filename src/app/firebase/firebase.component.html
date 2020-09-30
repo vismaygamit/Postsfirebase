@@ -1,0 +1,20 @@
+<form (ngSubmit)="onCreatePost(postForm.value)" #postForm="ngForm">
+Title
+  <input type="text" name="title" ngModel><br>
+  Content
+  <input type="text" name="content" ngModel><br>
+  <input type="submit" name="btnsub" [disabled]="!postForm.valid" value="Send Post"><br>
+  <input type="button" name="btnfetch" value="Fetch Post" (click)="onFetchPosts()">
+  <input type="button" name="btnclear" value="Clear Post" (click)="onclearPosts()">
+</form>
+<h4 *ngIf="loadedPosts.length<1 && !isFetching">No post Available</h4>
+<div *ngFor="let value of loadedPosts">
+  Id:{{value.id}}<br>
+  Name:{{value.title}}<br>
+  Content:{{value.content}}<br>
+</div>
+<h4 *ngIf="isFetching && !error">Loading...</h4>
+<div class="alert alert-danger" *ngIf="error">
+<!-- <span>{{error}}</span> -->
+</div>
+

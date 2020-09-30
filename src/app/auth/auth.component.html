@@ -1,0 +1,6 @@
+<form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+Email<input type="email" name="email" id="email" ngModel required email>
+Password<input type="password" name="password" id="password" minlength="6" ngModel required>
+<button type="submit" [disabled]="!authForm.valid">{{isLoginMode ? 'Login' : 'Sign up'}}</button>
+<button (click)="onSwitchMode()">Switch to {{isLoginMode ? 'Sign Up' : 'Login'}}</button>
+</form>

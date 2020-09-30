@@ -1,0 +1,28 @@
+<!-- <a routerLink="firedemo">Insertion</a>
+<a routerLink="auth">Login</a>
+<a routerLink="/">home</a>
+<label>This is home page</label>
+ -->
+<mat-toolbar>
+<span>
+<a routerLink="/">My Messages</a>
+</span>
+<span class="spacer"></span>
+<ul>
+  <li *ngIf="userIsAuthenticated">
+    <a mat-button routerLink="/addpost">Add post</a>
+  </li>
+  <li *ngIf="!userIsAuthenticated">
+    <a mat-button routerLink="/login">Login</a>
+  </li>
+  <li *ngIf="!userIsAuthenticated">
+    <a mat-button routerLink="/signup">Signup</a>
+  </li>
+  <li *ngIf="userIsAuthenticated">
+    <button mat-button (click)="onLogout()">Logout</button>
+  </li>
+</ul>
+</mat-toolbar>
+
+
+
