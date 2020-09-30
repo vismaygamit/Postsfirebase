@@ -19,7 +19,7 @@ export class AuthService {
 
   signup(email:string, password:string)
   {
-return this.http.post<AuthResponseData>('https://securetoken.googleapis.com/v1/token?key=AIzaSyCNYJO3sHWCmu-gTPeD_4CRZ7F6sHFgHp4',
+return this.http.post<AuthResponseData>('https://securetoken.googleapis.com/v1/token?key',
 {
 email:email,
 password:password,
@@ -32,7 +32,7 @@ returnSecureToken:true
 
   login(email:string, password:string)
   {
-return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCNYJO3sHWCmu-gTPeD_4CRZ7F6sHFgHp4',
+return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=',
 {
 email:email,
 password:password,
